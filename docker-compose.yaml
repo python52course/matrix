@@ -11,4 +11,4 @@ services:
       - .env
     ports:
       - ${APP_PORT}:8000
-    command: gunicorn --workers 1  app.main:app
+    command: gunicorn app.main:app --bind 0.0.0.0:${APP_PORT} --reload 
