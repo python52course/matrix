@@ -20,3 +20,29 @@ mypy = "^1.11.2"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.mypy]
+strict = true
+disable_error_code = ["assignment", "import", "call-arg", "return", "type-arg", "var-annotated", "arg-type"]
+exclude = ["venv", ".venv"]
+
+[tool.ruff]
+target-version = "py31"
+line-length = 100
+
+[tool.ruff.lint]
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "R",  # refactor
+    "B",  # flake8-bugbear
+    "C4",  # flake8-comprehensions
+    "UP",  # pyupgrade
+    "ARG001", # unused arguments in functions
+]
+
+ignore = [
+    "B904",  # Allow raising exceptions without from e, for HTTPException
+]
