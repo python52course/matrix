@@ -12,3 +12,6 @@ def ping() -> dict:
         dict: A dictionary with the key "ping" and the value "pong".
     """
     return {"ping": "pong"}
+
+
+def get_matrix(): ...
